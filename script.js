@@ -6,9 +6,13 @@ let calculated = '1'
 
 
 const logCalc = () => { 
-    const isString = typeof(calculated) === 'string' 
+    //Added brackets after typeof and did strict equality to check if it is string
+    const isString = typeof(calculated) === 'string'
+    // isString -> !isString                            parsenumber -> parseInt
     const calculatedAsNumber = !isString ? calculated : parseInt(calculated)
+    //         === -> =
     calculated = calculatedAsNumber + 1 
+    // Added return
     return calculated
 }
 
@@ -20,7 +24,7 @@ const calcUser = () => {
 }
 
 const checkUser = () => {
-	if ((user) && (state === 'requesting')) {
+	if (user && state === 'requesting') {
 		console.log(`User: ${user} (${calculated})`)
 	}
 }
